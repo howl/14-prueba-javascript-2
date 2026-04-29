@@ -60,4 +60,51 @@ const numeroDeDosTresCuatroCifras = () => {
   return `El número ${numero} tiene ${numero.length} cifras`;
 };
 
-console.log(numeroDeDosTresCuatroCifras());
+// Comentado para evitar que salte el prompt en siguientes ejercicios.
+//console.log(numeroDeDosTresCuatroCifras());
+
+/**
+ * EJERCICIO 3
+ *
+ * Solicite al usuario que escriba un color. Si ese color existe que lo traduzca
+ * al inglés, sino que muestre un mensaje de error
+ * @returns {string}
+ */
+const traduceColor = () => {
+  const color = window.prompt('Introduce el nombre de un color: ');
+  let colorEnIngles;
+  switch (color) {
+    case 'rojo':
+      colorEnIngles = 'red';
+      break;
+    case 'verde':
+      colorEnIngles = 'green';
+      break;
+    case 'azul':
+      colorEnIngles = 'blue';
+      break;
+    case 'amarillo':
+      colorEnIngles = 'yellow';
+      break;
+    case 'morado':
+      colorEnIngles = 'purple';
+      break;
+    case 'marrón':
+      colorEnIngles = 'brown';
+      break;
+    case 'naranja':
+      colorEnIngles = 'orange';
+      break;
+    case 'negro':
+      colorEnIngles = 'black';
+      break;
+    case 'blanco':
+      colorEnIngles = 'white';
+      break;
+    default:
+      return `Error: El color ${color} no existe en nuestros datos`
+  }
+  return `El color ${color} es ${colorEnIngles} en inglés`;
+};
+
+console.log(traduceColor());
