@@ -107,4 +107,39 @@ const traduceColor = () => {
   return `El color ${color} es ${colorEnIngles} en inglés`;
 };
 
-console.log(traduceColor());
+// Comentado para evitar que salte el prompt en siguientes ejercicios.
+//console.log(traduceColor());
+
+/**
+ * EJERCICIO 4
+ *
+ * Se solicita al usuario que ingrese por teclado 10 números, el programa devolverá:
+ *   Cuantos son positivos
+ *   Cuantos son negativos
+ *   Cuantos son pares
+ * @returns {string}
+ */
+const positivosNegativosPares = () => {
+  const cantidadDeCadaTipo = {
+    positivos: 0,
+    negativos: 0,
+    pares: 0,
+  };
+  let numNumeros = 0;
+  do {
+    let numero = window.prompt(`Introduce número ${numNumeros + 1}:`);
+    if (numero.trim() !== '' && !Number.isNaN(numero)) {
+      numero = Number(numero);
+      if (numero > 0)
+        cantidadDeCadaTipo.positivos++;
+      else
+        cantidadDeCadaTipo.negativos++;
+      if (!(numero % 2))
+        cantidadDeCadaTipo.pares++;
+      numNumeros++;
+    }
+  } while (numNumeros < 10);
+  return `Hay ${cantidadDeCadaTipo.positivos} positivos, ${cantidadDeCadaTipo.negativos} negativos y ${cantidadDeCadaTipo.pares} pares`;
+};
+
+console.log(positivosNegativosPares());
