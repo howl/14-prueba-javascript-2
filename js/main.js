@@ -142,4 +142,38 @@ const positivosNegativosPares = () => {
   return `Hay ${cantidadDeCadaTipo.positivos} positivos, ${cantidadDeCadaTipo.negativos} negativos y ${cantidadDeCadaTipo.pares} pares`;
 };
 
-console.log(positivosNegativosPares());
+
+// Comentado para evitar que salte el prompt en siguientes ejercicios.
+//console.log(positivosNegativosPares());
+
+/**
+ * EJERCICIO 5
+ *
+ * Se solicitan 10 números enteros comprendidos entre 1 y 500, estos números se almacenarán en un array.
+ *   Almacenar todos los números en un array
+ *   Almacenar en otro array los números comprendidos entre el 1 y 250
+ *   Almacenar en otro array los números comprendidos entre el 251 y 500
+ * @returns {number[][]}
+ */
+const almacenarNumerosEnArrays = () => {
+  const numeros = [];
+  numeros[0] = [];
+  numeros[1] = [];
+  numeros[2] = [];
+  let numNumeros = 0;
+  do {
+    numeros[0][numNumeros] = window.prompt(`Introduce número ${numNumeros + 1} entre 1 y 500:`);
+    if (numeros[0][numNumeros].trim() !== '' && numeros[0][numNumeros] >= 1 && numeros[0][numNumeros] <= 500) {
+      numeros[0][numNumeros] = Number(numeros[0][numNumeros]);
+      if (numeros[0][numNumeros] <= 250)
+        numeros[1].push(numeros[0][numNumeros]);
+      else
+        numeros[2].push(numeros[0][numNumeros]);
+      numNumeros++;
+    }
+  } while (numNumeros < 10);
+
+  return numeros;
+};
+
+console.log(almacenarNumerosEnArrays());
