@@ -34,4 +34,30 @@ const calcularMediaYCalificar = () => {
     return 'Sobresaliente';
 };
 
-console.log(calcularMediaYCalificar());
+// Comentado para evitar que salte el prompt en siguientes ejercicios.
+//console.log(calcularMediaYCalificar());
+
+/**
+ * EJERCICIO 2
+ *
+ * Hacer un programa que:
+ *   1. Ingreso de un numero por teclado
+ *   2. Muestre por pantalla si ese numero es de 1 cifra 2 cifras o 3 cifras
+ * @returns {string}
+ */
+const numeroDeDosTresCuatroCifras = () => {
+  let numero;
+  do {
+    numero = window.prompt('Introduce un número entre 0 y 999: ');
+    if (numero.trim() === '' || numero < 0 || numero > 999)
+      numero = null;
+  } while (numero === null);
+  /*
+    Aunque número es ya un String, hago casting a Number y de nuevo a String para
+    evitar que el valor -0 acabe como 0.
+  */
+  numero = String(Number(numero));
+  return `El número ${numero} tiene ${numero.length} cifras`;
+};
+
+console.log(numeroDeDosTresCuatroCifras());
